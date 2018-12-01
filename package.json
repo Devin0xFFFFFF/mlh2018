@@ -4,6 +4,7 @@
   "description": "* Speech Recognition something something",
   "main": "app.js",
   "dependencies": {
+    "cognitive-services": "^1.2.1",
     "express": "^4.16.4"
   },
   "devDependencies": {},
