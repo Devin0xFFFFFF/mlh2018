@@ -40,7 +40,7 @@ func (c *Client) Predict(utterance string) (PredictionResult, error) {
 		return PredictionResult{}, err
 	}
 
-	if resp.TopScoringIntent.Score <= 0.5 {
+	if resp.TopScoringIntent.Score <= 0.5 || resp.TopScoringIntent.Name == "None" {
 		return PredictionResult{Result: "unknown"}, nil
 	}
 	return PredictionResult{Result: resp.TopScoringIntent.Name}, nil

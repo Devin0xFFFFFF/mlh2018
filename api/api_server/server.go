@@ -19,7 +19,7 @@ type MLH2018ApiServer struct {
 func NewAPIServer(listening int, secret string, client *Client) *MLH2018ApiServer {
 
 	router := mux.NewRouter()
-	router.HandleFunc("/get_intent/{secret}/{phrase}", GetIntent(client, secret)).Methods("GET")
+	router.HandleFunc("/get_intent/{secret}/{phrase}", GetIntent(client, secret)).Methods("GET", "OPTIONS")
 
 	return &MLH2018ApiServer{
 		muxRouter: router,
@@ -33,6 +33,11 @@ func (m *MLH2018ApiServer) Run() {
 
 func GetIntent(client *Client, secret string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		if r.Method == "OPTIONS" {
+			w.Header().Set("Access-Control-Allow-Headers", "Authorization")
+			return
+		}
 		params := mux.Vars(r)
 		if secret != params["secret"] {
 			w.WriteHeader(400)
