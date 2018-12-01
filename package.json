@@ -1,0 +1,24 @@
+{
+  "name": "mlh2018",
+  "version": "1.0.0",
+  "description": "* Speech Recognition something something",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devin0xFFFFFF/mlh2018.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devin0xFFFFFF/mlh2018/issues"
+  },
+  "homepage": "https://github.com/Devin0xFFFFFF/mlh2018#readme"
+}
