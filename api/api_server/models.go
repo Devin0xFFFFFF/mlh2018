@@ -22,3 +22,10 @@ type IntentResponse struct {
 	TopScoringIntent IntentResult   `json:"intent"`
 	Entities         []EntityResult `json:"entities"`
 }
+
+type RecognitionResponse struct {
+	Status      string `json:"RecognitionStatus"`
+	DisplayText string `json:"DisplayText"`
+	Offset      int    `json:"Offset"`
+	Duration    int    `json:"Duration"`
+}
