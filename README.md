@@ -1,4 +1,4 @@
 # mlh2018
 
 
-* Speech Recognition something something 
+* Azure Speech Recognition integrated with Unity
